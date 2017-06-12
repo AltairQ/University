@@ -1,0 +1,75 @@
+Pozostajemt przy zw rek. drugiego rzędu z wielomianowymi współczynnikami, ale poszukujemy teraz rozwiązań Sn typu H
+
+Istotnie wykorzystamy następujące twierdzenie:
+
+TW:
+Każda funkcja wymierna t_k = a_k / b_k (k - zmienna, a_k, b_k <- wielomiany zmiennej k o wymiernych wsp.) może być przedstawiona w postaci
+
+t_k = C * p_k+1 / p_k  * q_k+1 / r_k+1
+
+p_k, q_k, r_k są wielomianami zmiennej k o wymiernych współczynnikach, ze współczynnikami wiodącymi = 1 spełniającymi warunki:
+
+- gcd(q_k, r_k+j) = 1 dla każdego naturalnego j
+- gcd(p_k, q_k+1) = 1
+- gcd(p_k, r_k)   = 1
+
+Załóżmy, że
+
+S_n+1 / S_n = t_n - funkcja wymierna zmiennej n o wymiernych współczynnkach w liczniku i mianowniku
+
+Wtedy z podanego twierdzenia wynika, że
+t_n = C p_n+1 / p_n  *  q_n+1 / r_n+1  ([])
+
+gdzie p,q,r - wielomiany o wymiernych współczynnikach, gdzie wsp. wiodący = 1, C jest Q, oraz (... dalsze warunki z twierdzenia)
+
+Mnożymy równanie
+
+a2(n) s_n+2 / s_n + a1(n) s_n+1/s_n + a0(n)1 = 0
+
+przez p_n * r_n+1 * r_n+2 i wykorzystujemy postać ([]):
+
+(<>) C^2 a2(n) p_n+2 q_n+2 q_n+1 + C a1(n) * p_n+1 * q_n+1 * r_n+2 + a0(n) * p_n *r_n+1 * r_n+2 = 0  / q_n+ * r_n+2
+
+(...)
+
+
+Korzystając z założeń dot. wielomianów p, q, r oraz analizując (<>) wnioskujemy, że
+r_n+2 | a2(n)   oraz   q_n+1 | a0(n)                          (| = dzieli)
+
+Przyrównując do zera współczynnik wiodący lewej strony, znajdujemy, że stała C musi spełniać równanie kwadratowe (co daje najwyżej dwie możliwości). Ponieważ wielomiany a2 i a0 są znane, istnieje skończenie wiele wyborów r_n+2 i q_n+1. Po ustaleniu
+C, r, q mamy do rozwiązania (względem p_n) zw. rek. drugiego rzędu o wielomianowych współczynnikach. A rozwiązania wielomianowe takich równań potrafimy znajdować lub stwierdzać, że ich nie ma.
+
+
+
+Przykład: Znajdziemy rozwiązanie typu H zw. rek
+
+(n+4)S_n+2  + S_n+1 - (n+1)S_n = 0
+
+Znajdujemy, że jedynymi kandydatami na wielomian q_n są 1 lub n
+
+natomiast na rn są
+
+1 lub n+2
+
+Kandydatami na C okazują się być:
+C = -1 lub C = 1
+
+Przyjmując q_n = n, r_n = n+2, C = -1 znajdujemy p_n =2n +3
+
+Zatem S_n+1 / S_n = - (5+2n)/(3+2n) * (n+1)/(n+3)
+
+Przyjmując q = n, r = n+2, C =1 znajdujemy p = 1
+
+S_n+1 / S_n = (n+1)/(n+3)
+
+Ostatecznie znajdujemy następujące rozwiązania
+
+S_n = (-1)^n 2/3  (2n+3) / (n+1)_2
+
+oraz
+
+S_n = 2/(n+1)/(n+2)   (linowa niezależność!)
+
+Stąd każde rozwiązanie jest postaci
+
+S_n = C1*(-1)^n 
